@@ -1,0 +1,19 @@
+#!/bin/bash
+# Check if PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+  echo "PYFILE is not set"
+  exit 1
+fi
+
+# Compile the Python script using the Python compileall module
+output="${PYFILE}c"
+echo "Compiling $PYFILE ..."
+python3 -m py_compile "$PYFILE"
+
+# Move the compiled file to the desired location
+compiled_dir="__pycache__"
+compiled_file=$(ls $compiled_dir | grep -m 1 $(basename "$PYFILE" .py))
+mv "$compiled_dir/$compiled_file" "$output"
+
+# Clean up the __pycache__ directory
+rmdir "$compiled_dir"
