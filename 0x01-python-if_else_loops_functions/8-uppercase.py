@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def uppercase(str):
-    for char in str:
-        # Check if character is between 'a' and 'z'
-        if 'a' <= char <= 'z':
-            # Convert to uppercase
-            print(chr(ord(char) - 32), end="")
+    strmp = ""
+    for c in str:
+        if ord(c) > 96 and ord(c) < 123:
+            strmp += chr(ord(c)-32)
         else:
-            # Print non-lowercase characters as is
-            print(char, end="")
-    print()  # New line at the end
+            strmp += c
+    print("{}".format(strmp))
