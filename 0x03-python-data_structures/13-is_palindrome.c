@@ -10,8 +10,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-    /* Mark the parameter as unused */
-    (void) head;
-
-    return (0);
+/* Mark the parameter as unused */
+(void) head;
+return (0);
 }
