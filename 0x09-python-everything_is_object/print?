@@ -1,4 +1,7 @@
 
+a = (1)
+b = (1)
+a is b77;30604;0c
 def assign_value(n, v):
     n = v
 
