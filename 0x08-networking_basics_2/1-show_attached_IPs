@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Display all active IPv4 addresses on the machine
+
+# Use `/proc/net/fib_trie` to find IPv4 addresses, exclude localhost (127.0.0.1), and format the output
+grep -A 2 "32 host" /proc/net/fib_trie | grep -oP '\d+\.\d+\.\d+\.\d+' | grep -v '^127'
+
+
