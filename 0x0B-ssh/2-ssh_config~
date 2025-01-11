@@ -1,0 +1,6 @@
+Host server_icarz
+    HostName 18.234.105.147
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
+
